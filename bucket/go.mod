@@ -1,5 +1,5 @@
 module function/modules
 
-go 1.23.4
+go 1.25.0
 
-require cloud.google.com/go v0.36.0
+require cloud.google.com/go/functions v1.25.0
