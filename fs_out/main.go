@@ -14,7 +14,7 @@ type PubSubMessage struct {
 }
 
 type Info struct {
-	Name     string    `json:"name" firestore::"NAME"`
+	Name     string    `json:"name" firestore:"NAME"`
 	Place    string    `json:"place" firestore:"PLACE"`
 	Datetime time.Time `firestore:"DATETIME"`
 }
@@ -40,7 +40,7 @@ func PutFirestore(ctx context.Context, i *Info) {
 	}
 	defer client.Close()
 	i.Datetime = time.Now()
-	_, _, err = client.Collention("NAMES").Add(ctx, i)
+	_, _, err = client.Collection("NAMES").Add(ctx, i)
 	if err != nil {
 		log.Printf("データ書き込みエラー Error: %T message: %v", err, err)
 		return
